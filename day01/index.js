@@ -1,6 +1,5 @@
 const R = require("ramda");
-const { s } = require("../lib/combinators");
-const { fetchDataRows } = require("../lib/inputReader");
+const { fetchDataRows, s } = require("../lib/lib");
 
 const solve_1 = (arr) => arr.reduce((acc, curr, i, arr) => i === 0 ? acc : curr > arr[i - 1] ? acc + 1 : acc, 0);
 const makeWindows = (arr) => arr.map((_e, i, a) => a.slice(i, i + 3)).slice(0, -2);

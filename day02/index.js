@@ -1,6 +1,5 @@
 const R = require("ramda");
-const { s } = require("../lib/combinators");
-const { fetchDataRows } = require("../lib/inputReader");
+const { fetchDataRows, s } = require("../lib/lib");
 
 const r = /(\w)\w+ (\d+)/;
 const step = ([d, i]) => d.match(/[fd]/) ? +i : -i;
