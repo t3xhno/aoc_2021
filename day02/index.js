@@ -1,9 +1,8 @@
 const R = require("ramda");
 const { fetchDataRows, s } = require("../lib/lib");
 
-const r = /(\w)\w+ (\d+)/;
 const step = ([d, i]) => d.match(/[fd]/) ? +i : -i;
-const parse = (str) => str.match(r).slice(1, 3);
+const parse = (str) => str.match(/(\w)\w+ (\d+)/).slice(1, 3);
 const compute = (arr) => arr.reduce(([x, y], e) => e[0].match(/[du]/) ? [x, y + step(e)] : [x + step(e), y], [0, 0]);
 const computeWithAim = (arr) => arr.reduce(([x, y, aim], e) =>
   e[0].match(/[ud]/) ? [x, y, aim + (e[0].match(/d/) ? +e[1] : -e[1])] : [x + +e[1], y + +e[1] * aim, aim]
