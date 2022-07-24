@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { fetchDataRows, S } = require("../lib/lib");
+const { fetchDataRows, S } = require("../lib");
 
 const step = ([d, i]) => d.match(/[fd]/) ? +i : -i;
 const parse = (str) => str.match(/(\w)\w+ (\d+)/).slice(1, 3);

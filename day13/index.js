@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, S, F  } = require("../lib/lib");
+const { tLog, fetchDataRows, S, F  } = require("../lib");
 
 const getCoordinates = (arr) => [arr.slice(0, -3)];
 const findMax = R.pipe(R.map(d => +d), R.reduce(R.max, 0));

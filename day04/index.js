@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { getInput, S, F, Y } = require("../lib/lib");
+const { getInput, S, F, Y } = require("../lib");
 
 const tLog = R.tap((a) => console.dir(a, { depth: null }));
 

@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, S } = require("../lib/lib");
+const { tLog, fetchDataRows, S } = require("../lib");
 
 const solve_1 = (arr) => arr.reduce((acc, curr, i, arr) => i === 0 ? acc : curr > arr[i - 1] ? acc + 1 : acc, 0);
 const makeWindows = (arr) => arr.map((_e, i, a) => a.slice(i, i + 3)).slice(0, -2);

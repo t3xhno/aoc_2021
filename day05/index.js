@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, F } = require("../lib/lib");
+const { tLog, fetchDataRows, F } = require("../lib");
 
 const parseRow = (str) => str.trim().match(/((?<x1>\d+),(?<y1>\d+)) -> ((?<x2>\d+),(?<y2>\d+))/).groups;
 const isHorizontalOrVertical = ({ x1, x2, y1, y2 }) => x1 === x2 || y1 === y2;

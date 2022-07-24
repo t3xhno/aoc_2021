@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, S } = require("../lib/lib");
+const { tLog, fetchDataRows, S } = require("../lib");
 
 const dirs = [[-1, -1], [0, -1], [1, -1], [-1, 0], [0, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];
 const hasNeighbour = (m, i, j, [dx, dy]) => i + dx >= 0 && i + dx <= m[i].length - 1 && j + dy >= 0 && j + dy <= m.length - 1;

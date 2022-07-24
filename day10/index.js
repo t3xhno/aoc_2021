@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, S } = require("../lib/lib");
+const { tLog, fetchDataRows, S } = require("../lib");
 
 const bracket = {
   ")": { score: 3, closes: "(" },

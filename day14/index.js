@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { tLog, fetchDataRows, combineToArray, S, F  } = require("../lib/lib");
+const { tLog, fetchDataRows, combineToArray, S, F  } = require("../lib");
 
 const getBase = R.slice(0, 1);
 const getRules = R.pipe(R.slice(3, Infinity), R.map(x => x.match(/(?<rule>[A-Z]{2}) -> (?<in>[A-Z])/).groups));
