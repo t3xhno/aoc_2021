@@ -21,10 +21,13 @@ const parseLine = (str) => str.split("").reduce(({ o, err }, e) =>
     : { o, err: [...err, e] }
 , { o: [], err: [] });
 
+const prepare = R.pipe(R.map(R.reverse), R.map(R.map(b => bracket[b].closedBy)), R.map(R.reduce(scoreIt, 0)));
+const isCorrupted = (line) => line.err.length > 0;
+
 const solve_1 = R.pipe(
   R.map(parseLine),
+  R.filter(isCorrupted),
   R.pluck("err"),
-  R.filter(n => n.length > 0),
   R.pluck(0),
   R.map((n) => bracket[n].score),
   R.sum,
@@ -32,11 +35,9 @@ const solve_1 = R.pipe(
 
 const solve_2 = R.pipe(
   R.map(parseLine),
-  R.filter(n => n.err.length === 0),
+  R.reject(isCorrupted),
   R.pluck("o"),
-  R.map(R.reverse),
-  R.map(R.map(b => bracket[b].closedBy)),
-  R.map(R.reduce(scoreIt, 0)),
+  prepare,
   R.sort(R.subtract),
   R.median,
 );
