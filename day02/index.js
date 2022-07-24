@@ -1,5 +1,5 @@
 const R = require("ramda");
-const { fetchDataRows, s } = require("../lib/lib");
+const { fetchDataRows, S } = require("../lib/lib");
 
 const step = ([d, i]) => d.match(/[fd]/) ? +i : -i;
 const parse = (str) => str.match(/(\w)\w+ (\d+)/).slice(1, 3);
@@ -11,4 +11,4 @@ const computeWithAim = (arr) => arr.reduce(([x, y, aim], e) =>
 const solve_1 = R.pipe(R.map(parse), compute, R.product);
 const solve_2 = R.pipe(R.map(parse), computeWithAim, R.take(2), R.product);
 
-R.pipe(fetchDataRows, s(solve_1, solve_2))("data.txt");
+R.pipe(fetchDataRows, S(solve_1, solve_2))("data.txt");
